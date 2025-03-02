@@ -16,9 +16,9 @@ const CandidateForm = () => {
     email: '',
     phone: '',
     resume: null,
-    interests: '',
+    position: '',
     experience: '',
-    values: ''
+    availability: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,8 +43,8 @@ const CandidateForm = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Submission Received",
-        description: "Thank you for your interest. Our team will review your information and reach out soon.",
+        title: "Application Received",
+        description: "Thank you for your application. Our team will contact you within 24 hours to discuss placement opportunities.",
         duration: 5000,
       });
       setIsSubmitting(false);
@@ -54,9 +54,9 @@ const CandidateForm = () => {
         email: '',
         phone: '',
         resume: null,
-        interests: '',
+        position: '',
         experience: '',
-        values: ''
+        availability: ''
       });
     }, 1500);
   };
@@ -66,19 +66,20 @@ const CandidateForm = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <p className="text-primary font-medium mb-3">JOIN OUR TALENT POOL</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Start Your Impact-Driven Career</h2>
+            <p className="text-primary font-medium mb-3">48-HOUR PLACEMENT GUARANTEE</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get Hired Within 2 Days</h2>
             
             <p className="text-foreground/70 mb-8">
-              Submit your profile to our talent pool and we'll match you with opportunities aligned to your values and expertise. Our specialized recruiters focus on connecting purpose-driven professionals with organizations making a difference.
+              Submit your profile today and get placed in a top hospitality position within 48 hours - guaranteed! Our specialized recruiters work with premium hotels, restaurants, and resorts to fill urgent positions with qualified candidates like you.
             </p>
             
             <div className="space-y-5">
               {[
-                "Access to exclusive social impact opportunities",
-                "Career guidance from impact-focused recruiters",
-                "Networking with like-minded professionals",
-                "Support throughout your application journey"
+                "Guaranteed placement within 48 hours",
+                "No placement fee for candidates",
+                "Positions at top hospitality establishments",
+                "Competitive salary packages",
+                "Long-term career growth opportunities"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -122,9 +123,28 @@ const CandidateForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="(123) 456-7890"
+                    required
+                    placeholder="Your WhatsApp number"
                   />
                 </div>
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="position">Desired Position</Label>
+                <Select onValueChange={(val) => handleSelectChange(val, 'position')} required>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select position" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="waiter">Waiter/Waitress</SelectItem>
+                    <SelectItem value="housekeeping">Housekeeping Staff</SelectItem>
+                    <SelectItem value="receptionist">Front Desk Receptionist</SelectItem>
+                    <SelectItem value="steward">Steward</SelectItem>
+                    <SelectItem value="helper">Kitchen Helper</SelectItem>
+                    <SelectItem value="bartender">Bartender</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <div className="space-y-2">
@@ -137,7 +157,7 @@ const CandidateForm = () => {
                   accept=".pdf,.doc,.docx"
                   className="file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-primary/10 file:text-primary hover:file:bg-primary/20 file:cursor-pointer file:rounded-md"
                 />
-                <p className="text-xs text-foreground/60 mt-1">Accepted formats: PDF, DOC, DOCX</p>
+                <p className="text-xs text-foreground/60 mt-1">Optional - Accepted formats: PDF, DOC, DOCX</p>
               </div>
               
               <div className="space-y-2">
@@ -147,40 +167,31 @@ const CandidateForm = () => {
                     <SelectValue placeholder="Select your experience level" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="entry">Entry Level (0-2 years)</SelectItem>
-                    <SelectItem value="mid">Mid-Level (3-5 years)</SelectItem>
-                    <SelectItem value="senior">Senior (6-9 years)</SelectItem>
-                    <SelectItem value="executive">Executive (10+ years)</SelectItem>
+                    <SelectItem value="fresher">Fresher (No experience)</SelectItem>
+                    <SelectItem value="entry">Entry Level (0-1 year)</SelectItem>
+                    <SelectItem value="mid">Experienced (1-3 years)</SelectItem>
+                    <SelectItem value="senior">Senior (3+ years)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="interests">Areas of Interest</Label>
-                <Textarea
-                  id="interests"
-                  name="interests"
-                  value={formData.interests}
-                  onChange={handleInputChange}
-                  placeholder="What social impact areas are you most passionate about?"
-                  className="min-h-[80px]"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="values">Your Values</Label>
-                <Textarea
-                  id="values"
-                  name="values"
-                  value={formData.values}
-                  onChange={handleInputChange}
-                  placeholder="Tell us about your values and what drives your interest in social impact work"
-                  className="min-h-[100px]"
-                />
+                <Label htmlFor="availability">When can you start?</Label>
+                <Select onValueChange={(val) => handleSelectChange(val, 'availability')}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select your availability" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="immediate">Immediately</SelectItem>
+                    <SelectItem value="week">Within a week</SelectItem>
+                    <SelectItem value="two-weeks">Within two weeks</SelectItem>
+                    <SelectItem value="month">Within a month</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Your Profile"}
+                {isSubmitting ? "Submitting..." : "Apply Now - Get Hired in 48 Hours"}
               </Button>
             </form>
           </div>

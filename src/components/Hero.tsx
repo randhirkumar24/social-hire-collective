@@ -19,21 +19,28 @@ const Hero = () => {
 
       <div className="container-custom z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/4c9f1e8b-e4d6-479f-b2fd-1dd1278bd711.png" 
+              alt="StaffChahiye.com Logo" 
+              className="h-24 md:h-32"
+            />
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
-            Connecting <span className="text-primary">Talent</span> With 
-            <span className="text-primary"> Purpose</span>
+            Hospitality Staff <span className="text-primary">Within 48 Hours</span>
           </h1>
           
           <p className="mt-6 text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            We match passionate professionals with organizations making a positive social impact. Find meaningful work that aligns with your values.
+            We match qualified hospitality professionals with top employers. Get placed in just 2 days with our guaranteed placement program.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <a href="#jobs" className="button-primary">
               Browse Opportunities
             </a>
-            <a href="#about" className="button-secondary">
-              Learn About Our Mission
+            <a href="#contact" className="button-secondary">
+              Apply Today
             </a>
           </div>
         </div>

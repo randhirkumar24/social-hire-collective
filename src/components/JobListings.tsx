@@ -4,66 +4,66 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Search, MapPin, Briefcase, ArrowRight } from 'lucide-react';
 
-// Sample job data
+// Updated job data for hospitality industry
 const jobsData = [
   {
     id: 1,
-    title: "Sustainability Program Manager",
-    organization: "GreenFuture Foundation",
-    location: "San Francisco, CA",
+    title: "Waiter/Waitress",
+    organization: "Luxury 5-Star Hotel",
+    location: "Mumbai, MH",
     type: "Full-time",
-    category: "Environmental",
-    description: "Lead sustainability initiatives focused on urban renewal and climate action."
+    category: "Service",
+    description: "Provide exceptional dining service to guests in a high-end restaurant setting."
   },
   {
     id: 2,
-    title: "Community Outreach Coordinator",
-    organization: "Education for All",
-    location: "Chicago, IL",
+    title: "Housekeeping Staff",
+    organization: "Premium Hotel Chain",
+    location: "Delhi, DL",
     type: "Full-time",
-    category: "Education",
-    description: "Develop and implement community programs to increase educational access in underserved communities."
+    category: "Housekeeping",
+    description: "Maintain cleanliness and presentation of guest rooms and public areas."
   },
   {
     id: 3,
-    title: "Director of Development",
-    organization: "Medical Relief International",
-    location: "Remote",
+    title: "Front Desk Receptionist",
+    organization: "Business Hotel",
+    location: "Bangalore, KA",
     type: "Full-time",
-    category: "Healthcare",
-    description: "Oversee fundraising and development for global health initiatives."
+    category: "Front Office",
+    description: "Handle guest check-ins/check-outs and provide information about hotel services."
   },
   {
     id: 4,
-    title: "UX Designer for Accessibility",
-    organization: "Inclusive Tech",
-    location: "Boston, MA",
-    type: "Contract",
-    category: "Technology",
-    description: "Design accessible digital solutions for organizations serving diverse populations."
+    title: "Steward",
+    organization: "Fine Dining Restaurant",
+    location: "Pune, MH",
+    type: "Full-time",
+    category: "Service",
+    description: "Assist kitchen and service staff, manage dishwashing and maintain kitchen cleanliness."
   },
   {
     id: 5,
-    title: "Social Media Manager",
-    organization: "Ocean Conservation Alliance",
-    location: "Remote",
+    title: "Helper - Kitchen",
+    organization: "Catering Company",
+    location: "Hyderabad, TS",
     type: "Part-time",
-    category: "Environmental",
-    description: "Create engaging content to promote ocean conservation awareness and initiatives."
+    category: "Kitchen",
+    description: "Assist chefs with food preparation, cleaning, and basic cooking tasks."
   },
   {
     id: 6,
-    title: "Financial Inclusion Specialist",
-    organization: "Community Finance",
-    location: "Atlanta, GA",
+    title: "Bartender",
+    organization: "Luxury Resort",
+    location: "Goa",
     type: "Full-time",
-    category: "Economic Development",
-    description: "Develop programs to provide financial services and education to underbanked communities."
+    category: "Bar",
+    description: "Mix and serve drinks with flair, maintain bar inventory and cleanliness."
   }
 ];
 
-// Category options
-const categories = ["All", "Environmental", "Education", "Healthcare", "Technology", "Economic Development"];
+// Updated categories for hospitality industry
+const categories = ["All", "Service", "Housekeeping", "Front Office", "Kitchen", "Bar"];
 
 const JobListings = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -86,10 +86,10 @@ const JobListings = () => {
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <p className="text-primary font-medium mb-3 animate-fade-in">CAREER OPPORTUNITIES</p>
           <h2 className="text-3xl md:text-4xl font-bold animate-fade-in">
-            Jobs With Impact
+            Hospitality Jobs With Guaranteed Placement
           </h2>
           <p className="mt-4 text-foreground/70 animate-fade-in">
-            Discover meaningful roles at organizations driving social change
+            Apply today and get placed within 48 hours - guaranteed!
           </p>
           <div className="h-1 w-20 bg-accent mx-auto mt-6 rounded-full animate-fade-in"></div>
         </div>
@@ -153,7 +153,7 @@ const JobListings = () => {
               </div>
               
               <Button className="w-full mt-2 group">
-                View Position 
+                Apply Now
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

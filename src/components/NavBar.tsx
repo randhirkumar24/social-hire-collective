@@ -32,9 +32,12 @@ const NavBar = () => {
       )}
     >
       <div className="container-custom flex justify-between items-center">
-        <a href="#" className="text-2xl font-semibold tracking-tight flex items-center">
-          <span className="text-primary">Social</span>
-          <span className="ml-1">Hire</span>
+        <a href="#" className="flex items-center">
+          <img 
+            src="/lovable-uploads/4c9f1e8b-e4d6-479f-b2fd-1dd1278bd711.png" 
+            alt="StaffChahiye.com Logo" 
+            className="h-10 md:h-12"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -49,7 +52,7 @@ const NavBar = () => {
             </a>
           ))}
           <a href="#contact" className="button-primary">
-            Get Started
+            Apply Now
           </a>
         </nav>
 
@@ -86,7 +89,7 @@ const NavBar = () => {
             className="button-primary w-full text-center mt-4"
             onClick={toggleMenu}
           >
-            Get Started
+            Apply Now
           </a>
         </nav>
       </div>
